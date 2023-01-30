@@ -1,4 +1,4 @@
-package main.java;
+package com.udacity.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
