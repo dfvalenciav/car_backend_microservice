@@ -4,9 +4,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -142,6 +140,17 @@ public class CarControllerTest {
          *   should utilize the car from `getCar()` below.
          */
         mvc.perform(delete(new URI("/cars/1")))
+                .andExpect(status().is2xxSuccessful());
+    }
+
+    @Test
+    public void updateCar() throws Exception {
+        /**
+         * : Add a test to check whether a vehicle is appropriately deleted
+         *   when the `delete` method is called from the Car Controller. This
+         *   should utilize the car from `getCar()` below.
+         */
+        mvc.perform(put(new URI("/cars/1")))
                 .andExpect(status().is2xxSuccessful());
     }
 
